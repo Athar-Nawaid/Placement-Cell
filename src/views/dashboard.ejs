@@ -1,0 +1,113 @@
+<div class="dashboard-cont">
+    <div class="dashboard-head"><h3>Students List-</h3><button id="addStudent-btn" class="addBtn">+ Add Student</button></div>
+    
+    <div id="student-table-cont">
+        <table class="table table-striped">
+            <thead>
+                <th>Batch</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Contact</th>
+                <th>College</th>
+                <th>DSA</th>
+                <th>Web Dev</th>
+                <th>React</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+              <%arr.forEach(student=>{%>
+                <tr>
+                  <td><%=student.batch%></td>
+                  <td><%=student.name%></td>
+                  <td><%=student.email%></td>
+                  <td><%=student.phone%></td>
+                  <td><%=student.college%></td>
+                  <td><%=student.dsa%></td>
+                  <td><%=student.webdev%></td>
+                  <td><%=student.react%></td>
+                  <td><a class="del-stud" href="/api/student/del/<%=student._id%>">Delete</a></td>
+                 
+              </tr>
+              <%})%>
+                
+            </tbody>
+        </table>
+    </div>
+   
+   
+
+    <!-- Modal Structure -->
+    <div id="studentModal" class="modal" style="display: none;">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Add Student</h2>
+        
+        <form id="student-form" method="post" action="/api/student/" >
+          
+          <input type="text" id="batch" name="batch" required placeholder="Batch" ><br>
+    
+         
+          <input type="text" id="studentName" name="studentName" required placeholder="Student Name:" ><br>
+    
+      
+          <input type="email" id="studentEmail" name="studentEmail" required placeholder="Student Email:" ><br>
+    
+     
+          <input type="text" id="phone" name="phone" required placeholder="Phone:"><br>
+
+          <input type="text" id="college" name="college" required placeholder="College:"><br>
+
+    
+         
+          <input type="number" id="dsa" name="dsa" required placeholder="DSA Score:"><br>
+    
+         
+          <input type="number" id="webdev" name="webdev" required placeholder="Web Development Score:"><br>
+    
+         
+          <input type="number" id="react" name="react" required placeholder="React Score:"><br>
+    
+          <button id="createStudent-btn" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <%if(err){ %>
+      <div class="error-cont" >
+        <h3><%=err%><span class="cross"> X</span></h3>
+        <button class="err-btn">Ok</button>
+      </div>
+    <%}%>
+
+    
+    
+
+<script>
+    document.getElementById("addStudent-btn").addEventListener("click", function () {
+  document.getElementById("studentModal").style.display = "block";
+});
+
+document.querySelector(".close").addEventListener("click", function () {
+  document.getElementById("studentModal").style.display = "none";
+});
+
+// Close the modal when clicking outside the modal content
+window.addEventListener("click", function (event) {
+  if (event.target === document.getElementById("studentModal")) {
+    document.getElementById("studentModal").style.display = "none";
+  }
+});
+
+// Handling error box
+let errBtn = document.getElementById('err-btn');
+let errBox = document.getElementsByClassName('error-cont');
+
+
+errBtn.addEventListener('click',()=>{
+  errBox.remove();
+})
+
+
+
+
+</script>

@@ -1,0 +1,45 @@
+<div class="dashboard-cont">
+    <div class="dashboard-head"><h3>Interviews List-</h3><a id="addInterview-btn" class="addBtn" href="/api/admin/interview-form/">+ Schedule Interview</a></div>
+    
+ 
+
+    <div id="student-table-cont">
+        <table class="table table-striped">
+            <thead>
+                <th>Batch</th>
+                <th>Student Name</th>
+                <th>Email</th>
+                <th>Contact</th>
+                <th>Company</th>
+                <th>Date</th>
+                <th>Interview Status</th>
+                <th>Result</th>
+                <th>Action</th>
+
+            </thead>
+            <tbody>
+                <%arr.forEach(interview=>{%>
+                    <tr>
+                      <td><%=interview.batch%></td>
+                      <td><%=interview.studentName%></td>
+                      <td><%=interview.studentEmail%></td>
+                      <td><%=interview.studentPhone%></td>
+                      <td><%=interview.company%></td>
+                      <td><%=interview.date%></td>
+                      <td><%=interview.status%></td>
+                      <td><%=interview.result%></td>
+                      
+                      <td><a class="update-btn" href="/api/admin/update/<%=interview._id%>">Update</a></td>
+                     
+                  </tr>
+                  <%})%>
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+   
+  

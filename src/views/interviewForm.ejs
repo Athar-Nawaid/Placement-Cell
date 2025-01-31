@@ -1,0 +1,18 @@
+<div class="form-cont">
+   <h1>Schedule Interview Form</h1>
+    <div class="wrapper-if">
+        <form action="/api/admin/schedule-interview" method="post" id="interview-form">
+            <input name="company" placeholder="Company Name" type="text">
+            <input name="date" placeholder="Date" type="date">
+            
+            <select name="email">
+                <%arr.forEach(student=>{ %>
+                    <option value="<%=student.email%>"><%=student.email%></option>
+                <%})%>
+            </select>
+            <button type="submit" id="SI-btn">Schedule Interview</button>
+        </form>
+    </div>
+    
+
+</div>

@@ -1,0 +1,348 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+.page{
+    
+    background-color: #f8b23a;
+    /* background-color:#E6E6FA; */
+    min-height: 98vh;
+}
+
+nav{
+    color: white;
+    background-color: #e68217;
+    /* background-color:#8888b3; */
+    padding: 1.3vw 3vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: solid black 2px; */
+    /* padding: 0; */
+}
+.heading{
+    /* border: solid black 2px; */
+    /* padding: 1vw 3vw; */
+    margin: 0;
+    font-size: 2vw;
+}
+.heading a{
+    font-size: 3vw;
+    font-weight: 700;
+}
+nav a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.3vw;
+    font-weight: 600;
+}
+nav a:hover{
+    color: #703b01;
+}
+nav ul{
+    display: flex;
+    padding-top: 2vh;
+    /* padding: 1vw 3vw; */
+}
+nav li{
+    list-style: none;
+    margin: 0 1vw;
+}
+
+
+
+/* Sign Up Page */
+.signUp-ext{
+    min-height: 99vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+.signUp-ext h1{
+    color: #755102;
+}
+
+.signUp-form{
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.signUp-form input{
+    margin: 1vh 1vw;
+    font-size: 3vh;
+    padding: 0.5vh 1vw;
+    border-radius: 1vw;
+    background-color: #fad493;
+   
+}
+.signUp-form button{
+    margin: 1vh 1vw;
+    font-size: 3vh;
+    padding: 0.5vh 1vw;
+    border-radius: 1vw;
+}
+.signUp-form button:hover{
+    color: white;
+    background-color: #e68217;
+
+}
+
+/* Dashborad */
+
+.dashboard-cont{
+    /* border: solid black 2px; */
+    margin: 0 4vw;
+  
+}
+.dashboard-head{
+    display: flex;
+    justify-content: space-between;
+    padding:1vw 0;
+    color: #755102;
+}
+.dashboard-head a{
+    text-decoration: none;
+}
+.addBtn{
+    color: white;
+    background-color: rgb(30, 161, 30);
+    padding: 0.5vw 1vw;
+    border-radius: 1vh;
+    font-weight: 600;
+    
+}
+#student-table-cont{
+    
+    display: flex;
+    justify-content: center;
+}
+th{
+    padding: 1vh 1vw;
+    margin: auto;
+}
+.del-stud{
+    background-color: rgb(253, 0, 0);
+    border-radius: 1vh;
+    padding: 0.5vh 0.5vw;
+    color: rgb(15, 1, 1);
+    text-decoration: none;
+    color: white;
+}
+
+
+/* Model */
+
+
+  /* Modal container */
+  .modal {
+    position: fixed;
+   
+    z-index: 1;
+    left: 0;
+    top: -1%;
+    width: 70%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  /* Modal content box */
+  .modal-content {
+    
+    background-color: #fefefe;
+    
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+  }
+  #student-form{
+    display: flex;
+  
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+  }
+  #student-form input{
+    padding: 0.5vh 1vw;
+    width: 50vw;
+    margin: 0.1vh;
+  }
+  #createStudent-btn{
+    background-color: #f8b23a;
+    padding: 0.5vh 1vw;
+    border-radius: 5px;
+  }
+
+  
+
+  /* Close button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+/* Error Box */
+
+.error-cont{
+    width: 30vw;
+    height: 30vh;
+    position: absolute;
+    border: solid black 2px;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border-radius: 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cross{
+    color: red;
+    font-size: 2vw;
+}
+.err-btn{
+    padding: 0.5vh 1vw;
+    border-radius: 1vw;
+    background-color: #e68217;
+    color: white;
+}
+
+
+/* Home */
+
+#home-page{
+    display: flex;
+    flex-direction: column;
+}
+.home-cont{
+    
+    min-height: 92vh;
+    display: flex;
+    justify-content: center;
+    
+}
+.home-element{
+    width: 40vw;
+    overflow: hidden;
+   
+    display: flex;
+    /* color:#8888b3; */
+    color: white;
+    align-items: center;
+    font-weight: 800;
+    font-size: 5vw;
+
+}
+.home-element img{
+    width: 40vw;
+    object-fit: contain;
+}
+
+/* Interview Form */
+.form-cont{
+   
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.form-cont h1{
+    margin: 1vw;
+    color: #755102;
+}
+
+#interview-form{
+    display: flex;
+    flex-direction: column;
+}
+
+#interview-form input{
+    width: 20vw;
+    margin: 1vh;
+    padding: 0.5vh 1vw;
+    border-radius: 0.5vw;
+}
+#interview-form select{
+    width: 20vw;
+    margin: 1vh;
+    padding: 0.5vh 1vw;
+    border-radius: 0.5vw;
+}
+
+#SI-btn{
+    width: 20vw;
+    margin: 1vh;
+    padding: 0.5vh 1vw;
+    border-radius: 0.5vw;
+    background-color: #e68217;
+    color: #fefefe;
+}
+.wrapper-if{
+    padding: 3vw 5vw;
+    background-color: #fad493;
+    border-radius: 1vw;
+}
+
+.update-btn{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    background-color: #f8b23a;
+    border-radius: 1vh;
+    padding: 0.5vh 0.5vw;
+}
+
+
+/* Interview update form */
+
+.interview-update-page{
+    min-height: 88vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.interview-update-page form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.form-elements{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.form-elements input{
+    padding: 0.5vh 1vw;
+    border-radius: 1vh;
+}
+
+.form-elements select{
+    padding: 0.5vh 1vw;
+    border-radius: 1vh;
+}
+.update-I-btn{
+    background-color: #e68217;
+    padding: 0.5vh 1vw;
+    border-radius: 1vh;
+    margin: 1vw 0;
+    align-self: center;
+}

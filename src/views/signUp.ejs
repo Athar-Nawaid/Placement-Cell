@@ -1,0 +1,26 @@
+
+<div class="signUp-ext">
+
+    <%if(alert){ %>
+    <%if(!success){ %>
+        <div class="alert alert-danger" role="alert">
+            <%=msg%>
+          </div>
+       
+    <%}%>   
+    <%}%> 
+    
+    
+
+    <h1>Register</h1>
+    <form class="signUp-form" method="post" action="/api/user/signUp">
+
+        <input type="text" placeholder="Name" name="userName">
+        <input type="email" placeholder="Email" name="email">
+        <input type="password" placeholder="Password" name="password">
+        <input type="password" placeholder="Confirm Password" name="conPassword">
+        <button type="submit">Submit</button>
+    </form>
+    
+    <a href="/api/user/signIn">Already have an account?</a>
+</div>

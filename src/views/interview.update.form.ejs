@@ -1,0 +1,50 @@
+<div class="interview-update-page">
+    <form method="post" action="/api/admin/update-interview/<%=interview._id%>">
+        <div class="form-elements">
+            <label for="batch">Batch</label>
+            <input type="text" id="batch" placeholder="interview.batch" value="<%=interview.batch%>" disabled>
+        </div>
+
+        <div class="form-elements">
+            <label for="studentName">Student Name</label>
+            <input type="text" id="studentName" placeholder="<%=interview.studentName%>" value="<%=interview.studentName%>" name="studentName" disabled>
+        </div>
+        <div class="form-elements">
+            <label for="studenEmail">Student Email</label>
+            <input type="text" id="studenEmail" placeholder="<%=interview.studentEmail%>" value="<%=interview.studentEmail%>" name="studentEmail" disabled>
+        </div>
+        <div class="form-elements">
+            <label for="studentPhone">Student Phone</label>
+            <input type="text" id="studentPhone" placeholder="<%=interview.studentPhone%>" value="<%=interview.studentPhone%>" name="studentPhone" disabled>
+        </div>
+        <div class="form-elements">
+            <label for="company">Company</label>
+            <input type="text" id="company" placeholder="<%=interview.company%>" value="<%=interview.company%>" name="company" disabled>
+        </div>
+        <div class="form-elements">
+            <label for="date">Interview Date</label>
+            <input type="date" id="date" placeholder="<%=interview.date%>" value="<%=interview.date%>" name="date">
+        </div>
+        <div class="form-elements">
+            <label for="status">Status</label>
+            
+            <select name="status">
+                <option value="Pending">Pending</option>
+                <option value="Completed">Completed</option>
+            </select>
+        </div>
+        <div class="form-elements">
+            <label for="result">Result</label>
+            <select name="result">
+                <option value="Pass">Pass</option>
+                <option value="Fail">Fail</option>
+                <option value="On Hold">On Hold</option>
+                <option value="Pending">Pending</option>
+                <option value="Didn't Attempt">Didn't Attempt</option>
+            </select>
+        </div>
+        <button type="submit" class="update-I-btn">Update</button>
+
+        
+    </form>
+</div>
