@@ -2,6 +2,6 @@ import mongoose from "mongoose";
 
 
 export default function mongooseConnect(){
-    mongoose.connect('mongodb://localhost:27017/Placement-Cell');
+    mongoose.connect(process.env.DB_URL);
     console.log('Connected to Mongoose');
 }

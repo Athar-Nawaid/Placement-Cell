@@ -43,7 +43,7 @@ export default class UserController{
         let user = await UserRepository.findByEmail(email);
 
         if(!user){
-            throw new Error('No user Found');
+            return res.render('signUp.ejs',{msg:'No user found! Please sign up first.',success:false,alert:true,userName:null});
         }
 
         let result = await bcrypt.compare(password,user.password);
@@ -51,7 +51,7 @@ export default class UserController{
 
         if(!result){
 
-            res.status(404).send('Invalid Credentials');
+            res.status(404).render('Invalid Credentials');
 
         }else{
 
