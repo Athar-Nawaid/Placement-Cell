@@ -51,7 +51,7 @@ export default class UserController{
 
         if(!result){
 
-            res.status(404).render('Invalid Credentials');
+            return res.render('signIn.ejs',{msg:'Invalid Credentials',success:false,alert:true,userName:null});
 
         }else{
 
