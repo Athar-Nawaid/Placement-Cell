@@ -54,37 +54,42 @@ export default class AdminController{
     }
 
     static async getReport(req,res){
-        let arr = [];
-        let interviews = await InterviewRepository.getInterviews();
-        
-        for (let interview of interviews) {
-            let student = await StudentRepository.getStudentById(interview.studentId);
-           
-            arr.push({
-                studentId:interview.studentId,
-                studentName:interview.studentName,
-                college:student.college,
-                dsa:student.dsa,
-                webdev:student.webdev,
-                react:student.react,
-                company:interview.company,
-                date:interview.date,
-                status:interview.status,
-                result:interview.result
-            });
+        try{
+            let arr = [];
+                let interviews = await InterviewRepository.getInterviews();
+                
+                for (let interview of interviews) {
+                    let student = await StudentRepository.getStudentById(interview.studentId);
+                
+                    arr.push({
+                        studentId:interview.studentId,
+                        studentName:interview.studentName,
+                        college:student.college,
+                        dsa:student.dsa,
+                        webdev:student.webdev,
+                        react:student.react,
+                        company:interview.company,
+                        date:interview.date,
+                        status:interview.status,
+                        result:interview.result
+                    });
+                    
+                };
+
+                let heading = ['Studend Id','Student Name','College', 'Dsa','Wevdev','React','Company','Date','Status','Result'];
+                let csvParser = new CsvParser({heading});
+                let csvData = csvParser.parse(arr);
             
-        };
+                res.setHeader('Content-Type','text/csv');
+                res.setHeader('Content-Disposition','attachment:filename=studentData.csv');
+                console.log('working');
 
-        let heading = ['Studend Id','Student Name','College', 'Dsa','Wevdev','React','Company','Date','Status','Result'];
-        let csvParser = new CsvParser({heading});
-        let csvData = csvParser.parse(arr);
-       
-        res.setHeader('Content-Type','text/csv');
-        res.setHeader('Content-Disposition','attachment:filename=studentData.csv');
-        console.log('working');
-
-        res.status(200).end(csvData);
-    }
+                res.status(200).end(csvData);
+            }
+            catch(err){
+                console.log(err);
+            }
+        }
     
     
 }
